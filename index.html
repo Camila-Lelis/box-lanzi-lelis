@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Box Lanzi Lelis · HYROX Training Club Cataguases</title>
+  <meta name="description" content="O único box afiliado ao HYROX Training Club de Cataguases - MG.">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@box_Lanzi_Lelis">
+  <meta property="og:description" content="O único box afiliado ao HYROX Training Club de Cataguases - MG.">
+  <meta property="og:url" content="https://camila-lelis.github.io/box-lanzi-lelis/">
+  <meta property="og:image" content="https://camila-lelis.github.io/box-lanzi-lelis/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #FDC605;
+      --black: #000000;
+      --white: #FFFFFF;
+      --muted: #B8B8B8;
+      --cut: 12px; /* 45-degree corners, like the chamfers in the logo */
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Exo 2", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 480px;
+      padding: max(40px, env(safe-area-inset-top)) 20px max(32px, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: min(300px, 80vw);
+      height: auto;
+      display: block;
+    }
+
+    h1 {
+      margin: 28px 0 8px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+    }
+
+    .bio {
+      margin: 0 0 32px;
+      max-width: 30ch;
+      font-size: 16px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .bio strong { color: var(--yellow); font-weight: 600; }
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card {
+      --cut-shape: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut),
+        100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%,
+        0 calc(100% - var(--cut)), 0 var(--cut));
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      padding: 14px 50px;
+      clip-path: var(--cut-shape);
+      background: var(--yellow);
+      color: var(--black);
+      font-size: clamp(15px, 4.4vw, 17px);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, filter 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a.card:hover { filter: brightness(1.08); }
+    a.card:active { transform: scale(0.98); }
+    a.card:focus-visible { outline: none; filter: brightness(1.15); box-shadow: inset 0 0 0 3px var(--black); }
+
+    .card svg {
+      position: absolute;
+      left: 18px;
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Not live yet: outlined in the same chamfered shape. */
+    .card.soon {
+      flex-direction: column;
+      gap: 6px;
+      background: rgba(253, 198, 5, 0.55);
+      color: rgba(253, 198, 5, 0.75);
+      cursor: default;
+    }
+
+    .card.soon::before {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: var(--black);
+      clip-path: polygon(calc(var(--cut) - 1px) 0, calc(100% - var(--cut) + 1px) 0, 100% calc(var(--cut) - 1px),
+        100% calc(100% - var(--cut) + 1px), calc(100% - var(--cut) + 1px) 100%, calc(var(--cut) - 1px) 100%,
+        0 calc(100% - var(--cut) + 1px), 0 calc(var(--cut) - 1px));
+    }
+
+    .card.soon > * { position: relative; }
+    .card.soon svg { position: absolute; }
+
+    .badge {
+      padding: 2px 8px;
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--yellow);
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 40px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: #6F6F6F;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      main > * { animation: rise 0.5s ease both; }
+      main > *:nth-child(2) { animation-delay: 0.05s; }
+      main > *:nth-child(3) { animation-delay: 0.1s; }
+      main > *:nth-child(4) { animation-delay: 0.15s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="logo.svg" width="619" height="527" alt="Logo Box Lanzi Lelis">
+
+    <h1>@box_Lanzi_Lelis</h1>
+    <p class="bio">O único box afiliado ao <strong>HYROX Training Club</strong> de Cataguases - MG</p>
+
+    <nav aria-label="Links">
+      <a class="card" href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.5 9.5c.3 1.6 1.4 3.2 3 4.2l1.1-1.1 2 1-.4 1.4c-3 .3-6.6-3-6.9-6l1.4-.4 1 2Z"/></svg>
+        <span>Fale conosco no WhatsApp</span>
+      </a>
+
+      <a class="card" href="https://maps.app.goo.gl/fzGN3Y8RftAmkUwA8" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Venha nos visitar</span>
+      </a>
+
+      <div class="card soon" aria-disabled="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Horários das aulas</span>
+        <span class="badge">Em breve</span>
+      </div>
+    </nav>
+
+    <footer>Cataguases · MG</footer>
+  </main>
+</body>
+</html>
