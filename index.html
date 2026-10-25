@@ -29,6 +29,7 @@
       --black: #000000;
       --white: #FFFFFF;
       --muted: #B8B8B8;
+      --hover: #E0E0E0; /* light grey behind a card under the pointer */
       --cut: 12px; /* 45-degree corners, like the chamfers in the logo */
     }
 
@@ -106,13 +107,13 @@
       font-size: clamp(15px, 4.4vw, 17px);
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.15s ease, filter 0.15s ease;
+      transition: transform 0.15s ease, background-color 0.15s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    a.card:hover { filter: brightness(1.08); }
+    a.card:hover { background: var(--hover); }
     a.card:active { transform: scale(0.98); }
-    a.card:focus-visible { outline: none; filter: brightness(1.15); box-shadow: inset 0 0 0 3px var(--black); }
+    a.card:focus-visible { outline: none; background: var(--hover); box-shadow: inset 0 0 0 3px var(--black); }
 
     .card svg {
       position: absolute;
